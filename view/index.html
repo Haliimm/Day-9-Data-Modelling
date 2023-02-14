@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="/public/css/sweetalert2.min.css" />
+    <link rel="stylesheet" href="/public/css/animate.min.css" />
+    <link rel="stylesheet" href="/public/css/new.css" />
+  </head>
+  <body class="bg-secondary bg-opacity-10">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light h-100">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="/public/images/logo.png" alt="Logo" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item ms-3">
+              <a class="a-navbar nav-link active fw-bolder text-black" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="a-navbar nav-link text-black" href="/project">Add Project</a>
+            </li>
+          </ul>
+          <div class="d-flex right-nav">
+            <a href="/contact" class="a-Rnavbar">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Content Card -->
+    <div class="container pb-3">
+      <div class="card border-0 my-5 p-5 d-flex flex-row d-flex justify-content-between">
+        <div class="align-self-center">
+          <h2 class="fw-bold text-black mb-3">Hi Welcome to my hut</h2>
+          <p class="desc_person">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, facere nihil libero aliquid ab sunt. Possimus aut atque nostrum cupiditate quisquam, quia ipsam iusto nobis, aperiam quos, optio veniam corrupti. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Quisquam, id eum. Minus autem quam magni pariatur consectetur aut ex doloremque eius accusamus rem id velit, deleniti aperiam enim quibusdam eaque!
+          </p>
+
+          <div class="my-5 contact-download">
+            <a href="https://wa.link/rpbvp5" class="contact-me text-decoration-none rounded-pill link-contactme py-2 px-4 text-light me-2" target="_blank" title="Contact">contact</a>
+            <a href="/public/document/Resume - Halim Awaludien Khafifie.pdf.pdf" class="download text-decoration-none text-black" target="_blank" title="Download CV">Download CV <i class="fa-solid fa-download"></i></a>
+          </div>
+
+          <div class="social-media">
+            <a href="https://www.linkedin.com/in/halim-awaludien-khafifie/" class="icon btn bg-black" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/haliimm_a?igshid=NDk5N2NlZjQ=" class="icon btn bg-black" target="_blank"><i class="fa-brands fa-instagram" title="Instagram"></i></a>
+            <a href="https://www.facebook.com/" class="icon btn bg-black" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/" class="icon btn bg-black" target="_blank" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="align-self-center">
+          <div class="card border-0 shadow-lg bg-body rounded text-center ms-5" style="width: 24rem">
+            <img src="/public/images/halim.JPG" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="h4 fw-bolder m-0 text-black">Halim Awaludien Khafifie</p>
+              <p class="m-0 fw-normal">Fullstack Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Enc Content Card -->
+
+    <!-- Content My Project -->
+    <div class="container-fluid bg-light pt-3">
+      <div class="container">
+        <h3 class="fw-bold text-center text-black my-5">MY PROJECT</h3>
+        <div class="d-flex justify-content-center row row-cols-2 row-cols-md-4 g-3">
+
+<!-- Dynamic Content Start -->
+          {{range $index, $data := .Projects}}
+          <div class="card p-3 border-0 mb-5 shadow" style="width: 22rem">
+            <img src="/public/images/1.jpg" class="card-img-top rounded-3 mb-3" alt="card-image" />
+            <a href="project/{{$index}}" class="card-title fw-bold fs-5 text-black text-decoration-none mb-1" name="Projectname">{{$data.Projectname}}</a>
+            <h6 class="card-subtitle mb-3 text-muted fw-light">{{$data.Duration}}</h6>
+            <p class="card-text mb-0">{{$data.Description}}</p>
+
+            <div class="d-flex mb-3 mt-3">
+              {{ range $index, $data := $data.Technologies}}
+                <span class="iconTechno ">
+                  <img src="/public/images/{{ $data }}.svg" style="width: 35px;" class="ms-0">
+                </span>
+              {{end}}
+            </div>
+
+            <div class="action">
+              <a href="/editProject/{{$index}}" class="edit-action">edit</a>
+              <a href="/deleteProject/{{$index}}" class="delete-action">delete</a>
+            </div>
+          </div>
+          {{end}}
+<!-- Dynamic Content End -->
+
+        </div>
+      </div>
+    <!-- End Content My Project-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>

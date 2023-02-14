@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="/public/css/new.css" />
+    <title>Add My Project</title>
+  </head>
+
+  <body class="bg-secondary bg-opacity-10">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light h-100">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="/public/images/logo.png" alt="Logo" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item ms-3">
+              <a class="a-navbar nav-link text-black" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="a-navbar nav-link active fw-bolder" href="/project">Add Project</a>
+            </li>
+          </ul>
+          <div class="d-flex right-nav">
+            <a href="/contact" class="a-Rnavbar">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- create project -->
+    <div class="container">
+      <div class="justify-content-center m-auto my-5 w-50 formInputContainer">
+        <form action="/project" enctype="multipart/form-data" method="POST">
+          <h3 class="fw-bold text-black text-center">ADD MY PROJECT</h3>
+          <div class="mb-3">
+            <label for="project-name" class="form-label fw-bolder">Title Project</label>
+            <input type="text" name="project-name" class="form-control shadow" id="project-name" placeholder="" />
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label for="start-date" class="form-label fw-bolder">Start Date</label>
+              <input type="date" class="form-control shadow" name="start-date" id="start-date" />
+            </div>
+            <div class="col">
+              <label for="end-date" class="form-label fw-bolder">End Date</label>
+              <input type="date" class="form-control shadow" name="end-date" id="end-date" />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label fw-bolder">Description</label>
+            <textarea class="form-control shadow" name="description" style="resize: none" id="description" rows="5" maxlength="100"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="technologies" class="form-label fw-bolder">Technologies</label>
+
+            <div class="row row-cols-2 ms-0 me-auto mb-3">
+              <div class="form-check">
+                <input class="col form-check-input" type="checkbox" value="nodejs" name="technologies" id="nodejs" />
+                <label class="form-check-label" for="nodejs"> Node Js </label>
+              </div>
+              <div class="form-check">
+                <input class="col form-check-input" type="checkbox" value="reactjs" name="technologies" id="reactjs" />
+                <label class="col form-check-label" for="reactjs"> React JS </label>
+              </div>
+              <div class="form-check">
+                <input class="col form-check-input" type="checkbox" value="javascript" name="technologies" id="javascript" />
+                <label class="form-check-label" for="javascript"> JavaScript </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="python" name="technologies" id="python" />
+                <label class="form-check-label" for="python"> Python </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="upload-image" class="form-label fw-bolder">Upload Image</label>
+            <div class="input-group mb-3">
+              <input type="file" class="form-control shadow" id="upload-image" name="image" />
+              <label class="input-group-text bg-body border-start-0" for="upload-image"><i class="fa-solid fa-paperclip fa-lg"></i></label>
+            </div>
+          </div>
+          <div class="form-button d-flex justify-content-end mt-5">
+            <button type="submit" name="submit" id="submit" class="btn btn-black rounded-pill px-5 py-2 fw-bolder">submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script src="/public/js/myProject.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</html>

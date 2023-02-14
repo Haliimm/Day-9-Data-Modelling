@@ -1,0 +1,70 @@
+
+
+
+// object
+// const nameObject = {
+//     property: 'values',
+// }
+
+
+// Object
+// const myBio = {
+//     myName: 'Halim Awaludien Khafifie',
+//     myAge: 22,
+//     isMarried: false
+// }
+// console.table(myBio);
+
+// alert(`Selamat Pagi mas ${myBio.myName}`)
+// console.log(myBio["isMarried"])
+
+// Array
+// let namaArray =[index1,index2,index3]
+// let myBio = ["Halim Awaludien khafifie", 24, false];
+// console.table(myBio);
+// console.log(`Umur saya saat ini ${myBio[1]}`)
+
+// array of objects
+// let nameArray = [
+//     {
+//         property: 'values',
+//         property: 'values',
+//         property: 'values',
+//         property: 'values',
+//     },
+//     {
+//         property: 'values',
+//         property: 'values',
+//         property: 'values',
+//         property: 'values',
+//     },
+//     {
+//         property: 'values',
+//         property: 'values',
+//         property: 'values',
+//         property: 'values',
+//     }
+        
+// ]
+
+// let batch44 = [
+//     {
+//         name: "Halim Awaludien Khafifie",
+//         age: 22,
+//         isMarried: false
+//     },
+//     {
+//         name: "Alifi Hurriyah",
+//         age: 23,
+//         isMarried: false
+//     },
+//     {
+//         name: "Arpan Hasif",
+//         age: 50,
+//         isMarried: true,
+//         jumlahAnak: "3"
+//     }
+    
+// ]
+
+// console.table(batch44)
